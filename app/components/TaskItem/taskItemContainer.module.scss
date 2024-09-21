@@ -1,0 +1,50 @@
+@import "../../styles/mixins.scss";
+
+.task-item-container {
+  border-radius: 8px;
+  border: 1px dashed #d7dde9;
+  list-style: none;
+
+  display: flex;
+  align-items: center;
+  gap: 16px;
+
+  padding: 16px;
+
+  &:hover {
+    border: 1px solid transparent;
+    background: #f7f9fd;
+  }
+
+  input {
+    width: 24px;
+    height: 24px;
+    border-radius: 4px;
+    background: #ffffff;
+    border: 1px solid #d7dde9;
+
+    &:checked {
+      appearance: none;
+      background-color: #a0dcf6;
+      background-image: url(/checked.svg);
+      background-position: center;
+      background-repeat: no-repeat;
+      border: 1px solid #0796d3;
+    }
+
+    &:checked ~ span {
+      text-decoration: line-through;
+      color: #0000008a;
+    }
+  }
+
+  span {
+    flex: 1;
+    @include primary-text-style;
+    color: #000000;
+  }
+
+  .trash-icon {
+    margin-left: auto;
+  }
+}

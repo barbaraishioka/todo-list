@@ -1,0 +1,113 @@
+@import "./mixins.scss";
+
+// GLOBAL MODAL STYLES
+
+.modal-container {
+  width: 100%;
+  height: 100%;
+  min-height: 100vh;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #ffffffcc;
+
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+
+  .modal {
+    width: 450px;
+    padding: 32px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    border-radius: 16px;
+    background: #ffffff;
+    box-shadow: 0px 24px 48px -12px #1018282e;
+
+    @include mobile {
+      width: 100%;
+      height: 100%;
+      padding: 24px;
+      border-radius: 0;
+    }
+
+    h2 {
+      @include title-style;
+    }
+
+    .modal-buttons-container {
+      display: flex;
+      gap: 16px;
+
+      @include mobile {
+        flex-direction: column-reverse;
+      }
+    }
+
+    .modal-buttons-container button {
+      width: 100%;
+      @include primary-text-style;
+      text-align: center;
+
+      padding: 16px 24px 16px 24px;
+      border-radius: 8px;
+      border: none;
+
+      // Botão escrito Cancelar
+      &.cancel-button {
+        background: #e7eefb;
+        color: #000000;
+      }
+
+      // Botão escrito Adicionar e Deletar
+      &.add-button,
+      &.delete-button {
+        @include secondary-text-style;
+        color: #ffffff;
+      }
+
+      // Botão escrito Adicionar
+      &.add-button {
+        background: linear-gradient(90deg, #0796d3 0%, #53c0f0 68.65%);
+      }
+
+      // Botão escrito Deletar
+      &.delete-button {
+        background: linear-gradient(90deg, #d30707 0%, #f05353 68.65%);
+      }
+    }
+  }
+
+  // ADD TASK MODAL STYLES
+
+  #add-task-modal label {
+    display: block;
+    @include primary-text-style;
+    color: #000000;
+
+    margin-bottom: 8px;
+  }
+
+  #add-task-modal input {
+    width: 100%;
+    @include primary-text-style;
+    color: #000000;
+
+    padding: 16px;
+    border-radius: 8px;
+    border: 1px solid #d7dde9;
+  }
+
+  // DELETE TASK MODAL STYLES
+
+  #delete-task-modal p {
+    @include primary-text-style;
+    line-height: 24px;
+    color: #0000008a;
+  }
+}
