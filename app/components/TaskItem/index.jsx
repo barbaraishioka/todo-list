@@ -1,6 +1,6 @@
 import { useState } from "react";
 import Image from "next/image";
-import styles from "./taskItemContainer.module.scss";
+import styles from "./style.module.scss";
 import DeleteTaskModal from "../DeleteTaskModal";
 
 export default function TaskItem({

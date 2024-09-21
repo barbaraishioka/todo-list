@@ -1,4 +1,4 @@
-import styles from "./taskListContainer.module.scss";
+import styles from "./style.module.scss";
 import TaskItem from "../TaskItem";
 
 export default function TaskListContainer({
